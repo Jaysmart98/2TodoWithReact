@@ -1,9 +1,14 @@
 import React from 'react'
+import { useState } from 'react'
 
-const Button = ({bgcolor, colorParams, text, action =()=>{}  }) => {
+const Button = ({bgColor, colorParams, text, setMint=()=>{}}) => {
+
+  const [divBG, setDivBG] = useState("white")
+
   return (
-    <button style={{background: bgcolor, color: colorParams, margin: "5px"}}
-    onClick={action}> {text} </button>
+    <div style={{background:divBG}}>
+      <button style={{background:bgColor, color: colorParams, margin: "5px"}} onClick={()=> setMint("Child")}  setDivBG={setDivBG} >{text}</button>
+    </div>
   )
 }
 
