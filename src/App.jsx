@@ -7,6 +7,8 @@ import Faq from './components/Pages/Faq/Faq'
 import Home from './components/Pages/Home/Home'
 import { Route } from 'react-router'
 import { BrowserRouter, Router, Routes } from 'react-router-dom'
+import Https from './Https.jsx'
+import OneProduct from './components/Pages/OneProduct/OneProduct.jsx'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/faq' element={<Faq/>}/>
+      <Route path='/api' element={<Https/>}/>
+      <Route path='/oneproduct/:sku' element={<OneProduct/>}/>
     </Routes>
     
     </BrowserRouter>
