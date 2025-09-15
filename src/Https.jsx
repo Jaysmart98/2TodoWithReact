@@ -2,17 +2,17 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Https = () => {
-    const [products, setProducts] = useState([])
+    const [product, setProduct] = useState([])
     fetch ("https://dummyjson.com/products")
     .then((res)=> res.json())
     .then((data)=> {
         console.log(data)
-        setProducts(data.products)
+        setProduct(data.products)
     })
 
   return (
     <div>
-        {products.map((prod, index) => {
+        {product.map((prod, index) => (
             <div key={index}>
                 <Link to={`/oneproduct/${prod.sku}`}>
                 <p>{prod.title}</p>
@@ -20,7 +20,7 @@ const Https = () => {
                 <img src={prod.thumbnail} alt=""/>
                 </Link>
             </div>
-        })}
+        ))}
     </div>
   )
 }
